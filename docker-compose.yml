@@ -10,6 +10,8 @@ services:
         build: ./docker/worker
         command: "bash /home/root/sync.sh"
         tty: true
+        environment:
+        - SLEEP=3000
         volumes:
             - .:/var/www:cached
         networks:
